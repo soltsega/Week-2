@@ -17,4 +17,10 @@ restaurants.csv
 display_results.ipynb
 reviews.csv
 insert_into_tables.ipynb
-requirements.txt
+requirements.
+
+echo "data/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo "*.pyc" >> .gitignore
+echo ".env" >> .gitignore
+echo "venv/" >> .gitignore
