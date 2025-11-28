@@ -11,3 +11,10 @@ demo_sqlite.py
 sql.py
 preprocessing_EDA.ipynb
 scraping & Data prep.pdf
+Error_handling_demo.ipynb
+Sentiment_demo.ipynb
+restaurants.csv
+display_results.ipynb
+reviews.csv
+insert_into_tables.ipynb
+requirements.txt
