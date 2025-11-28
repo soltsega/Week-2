@@ -1,3 +1,10 @@
+import sys
+from pathlib import Path
+
+# Add the project root to Python path
+sys.path.append(str(Path(__file__).parent.parent))
+
+
 import time
 from typing import List, Dict, Any
 from config.settings import BANK_APPS, SCRAPING_CONFIG, LANGUAGE_CONFIG, TRANSLATION_CONFIG
