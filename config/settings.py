@@ -1,17 +1,17 @@
 # App configurations
 BANK_APPS = {
     'cbe': {
-        'id': 'com.commbank.net.eth',
+        'id': 'com.combanketh.mobilebanking',
         'name': 'CBE',
         'supported_languages': ['en', 'am']  # English and Amharic
     },
     'boa': {
-        'id': 'com.bankofabyssinia.mobilebanking',
+        'id': 'com.boa.boaMobileBanking',
         'name': 'BOA',
         'supported_languages': ['en', 'am']
     },
     'dashen': {
-        'id': 'com.dashen.customer',
+        'id': 'com.dashen.dashensuperapp',
         'name': 'DASHEN',
         'supported_languages': ['en', 'am']
     }
