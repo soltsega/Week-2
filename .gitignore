@@ -1,0 +1,13 @@
+.scapper&preprocessing
+.venv
+config.py
+.demo
+demo.db
+.pql_pro
+preprocessing.py
+scraper.py
+scraping.pdf
+demo_sqlite.py
+sql.py
+preprocessing_EDA.ipynb
+scraping & Data prep.pdf
