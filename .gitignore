@@ -24,3 +24,7 @@ echo "__pycache__/" >> .gitignore
 echo "*.pyc" >> .gitignore
 echo ".env" >> .gitignore
 echo "venv/" >> .gitignore
+
+settings.cpython-314.pyc
+__init__.cpython-314.pyc
+scraper.cpython-314.pyc
