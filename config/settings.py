@@ -1,7 +1,7 @@
 # App configurations
 BANK_APPS = {
     'cbe': {
-        'id': 'com.cbe.cbe_birr_merchant',
+        'id': 'com.commbank.net.eth',
         'name': 'CBE',
         'supported_languages': ['en', 'am']  # English and Amharic
     },
