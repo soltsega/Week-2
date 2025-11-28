@@ -5,7 +5,7 @@ config.py
 demo.db
 .pql_pro
 preprocessing.py
-scraper.py
+scraper_demo.py
 scraping.pdf
 demo_sqlite.py
 sql.py
