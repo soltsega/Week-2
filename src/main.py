@@ -1,6 +1,6 @@
 import time
 from typing import List, Dict, Any
-from config.settings import BANK_APPS, SCRAPING_CONFIG, LANGUAGE_CONFIG
+from config.settings import BANK_APPS, SCRAPING_CONFIG, LANGUAGE_CONFIG, TRANSLATION_CONFIG
 from src.scraper import get_app_info, scrape_app_reviews
 from src.data_handler import process_reviews, save_to_csv, create_output_dir
 
