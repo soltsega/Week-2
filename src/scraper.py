@@ -68,5 +68,5 @@ def scrape_app_reviews(
         except Exception as e:
             print(f"  ✗ Error scraping {lang.upper()} reviews: {e}")
             continue
-            
+                    
     return all_reviews

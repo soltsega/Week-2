@@ -1,7 +1,7 @@
 import pandas as pd
 import emoji
 import time
-from typing import List, Dict, Any, Tuple, Optional
+from typing import List, Dict, Any, Optional
 from deep_translator import GoogleTranslator
 from config.settings import TRANSLATION_CONFIG, EMOJI_CONFIG, VALIDATION
 

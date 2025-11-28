@@ -1,12 +1,13 @@
 import sys
 from pathlib import Path
-
-# Add the project root to Python path
-sys.path.append(str(Path(__file__).parent.parent))
-
-
 import time
 from typing import List, Dict, Any
+
+# Add the project root to Python path
+project_root = str(Path(__file__).parent.parent)
+if project_root not in sys.path:
+    sys.path.append(project_root)
+
 from config.settings import BANK_APPS, SCRAPING_CONFIG, LANGUAGE_CONFIG, TRANSLATION_CONFIG
 from src.scraper import get_app_info, scrape_app_reviews
 from src.data_handler import process_reviews, save_to_csv, create_output_dir
@@ -87,20 +88,42 @@ def main():
         time.sleep(SCRAPING_CONFIG['sleep_time'])
         print(f"⏱️  Completed in {time.time() - start_time:.1f} seconds")
     
-    # Save all reviews
+    # Save reviews for each bank in separate files
     if all_reviews:
-        output_path = f"{SCRAPING_CONFIG['output']['directory']}/{SCRAPING_CONFIG['output']['filename']}"
-        save_to_csv(all_reviews, output_path)
+        # Group reviews by bank
+        reviews_by_bank = {}
+        for review in all_reviews:
+            bank = review.get('bank')
+            if bank not in reviews_by_bank:
+                reviews_by_bank[bank] = []
+            reviews_by_bank[bank].append(review)
         
-        # Final summary
+        # Save each bank's reviews to a separate file
+        saved_files = []
+        for bank_name, bank_reviews in reviews_by_bank.items():
+            # Format the output filename with bank name
+            output_filename = SCRAPING_CONFIG['output']['filename'].format(bank_name=bank_name.lower())
+            output_path = f"{SCRAPING_CONFIG['output']['directory']}/{output_filename}"
+            
+            # Save the bank's reviews
+            if save_to_csv(bank_reviews, output_path):
+                saved_files.append((bank_name, len(bank_reviews), output_path))
+        
+        # Print final summary
         print("\n" + "="*60)
         print("🏁 Scraping Complete!")
         print("="*60)
         print(f"📊 Total Reviews: {len(all_reviews)}")
-        print(f"💾 Saved to: {output_path}")
+        print("\n💾 Saved files:")
+        for bank_name, count, path in saved_files:
+            print(f"   - {bank_name}: {count} reviews -> {path}")
         print("="*60)
     else:
         print("\n❌ No reviews were scraped")
 
-if __name__ == "__main__":
+def run():
+    """Wrapper function to run the main scraper."""
     main()
+
+if __name__ == "__main__":
+    run()

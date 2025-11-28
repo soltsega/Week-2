@@ -34,18 +34,19 @@ TRANSLATION_CONFIG = {
     'provider': 'google',  # 'google', 'mymemory', or 'libre'
     'timeout': 5,  # seconds
     'retries': 3,
-    'batch_size': 10  # Number of texts to translate in a single batch
+    'batch_size': 10,  # Number of texts to translate in a single batch
+    'target_language': 'en'  # Add this line to specify the target language
 }
 
 # Scraping configuration
 SCRAPING_CONFIG = {
-    'reviews_per_language': 200,  # Per language
+    'reviews_per_language': 100,  # 100 per language (200 total per bank since we have 2 languages)
     'country': 'et',              # Ethiopia
     'sleep_time': 2,              # Seconds between requests
     'sort_by': 'most_relevant',   # most_relevant, newest, rating
     'output': {
         'directory': 'data',
-        'filename': 'bank_reviews.csv',
+        'filename': 'bank_reviews_{bank_name}.csv',  # Will be formatted with bank name
         'encoding': 'utf-8-sig'   # For Excel compatibility
     }
 }
