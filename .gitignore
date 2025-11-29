@@ -28,3 +28,9 @@ echo "venv/" >> .gitignore
 settings.cpython-314.pyc
 __init__.cpython-314.pyc
 scraper.cpython-314.pyc
+bank_reviews.csv
+data_handler.cpython-314.pyc
+preprocessing.log
+data_handler.cpython-314.pyc
+__pycache__
+data_handler.cpython-314.pyc
